@@ -1,0 +1,36 @@
+.bar_container{
+  width:40vw;
+  height:100px;
+  background-color: #CCC;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar_to_fill{
+  background: blue;
+  text-align: center;
+  height:100%;
+  width:0%;
+  position: absolute;
+  left:0;
+  top:0;
+}
+
+.bar_container p{
+  font-family: 'Bungee Shade', cursive;
+  z-index: 100;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  transition : ease-out 0.6s;
+  margin:0;
+  padding:0;
+  font-size : 35px;
+  color:white;
+}
+
+.hidden{
+  opacity: 0;
+}
