@@ -42,49 +42,6 @@ function deckDistribution(deck, nb_players){ // on obtient une liste de longueur
   return allPlayerDecks
 }
 
-
-
-function distribute(nbPlayer){
-
-  if (nbPlayer == 2) {
-    for (var i = 0; i < deck.length; i+=nbPlayer) {
-      player1Deck.push(deck[i])
-    }
-    for (var i = 1; i < deck.length; i+=nbPlayer) {
-      player2Deck.push(deck[i])
-    }
-  }
-
-  if (nbPlayer == 3) {
-    for (var i = 0; i < deck.length; i+=nbPlayer) {
-      player1Deck.push(deck[i])
-    }
-    for (var i = 1; i < deck.length; i+=nbPlayer) {
-      player2Deck.push(deck[i])
-    }
-    for (var i = 2; i < deck.length; i+=nbPlayer) {
-      player3Deck.push(deck[i])
-    }
-  }
-
-  if (nbPlayer == 4) {
-    for (var i = 0; i < deck.length; i+=nbPlayer) {
-      player1Deck.push(deck[i])
-    }
-    for (var i = 1; i < deck.length; i+=nbPlayer) {
-      player2Deck.push(deck[i])
-    }
-    for (var i = 2; i < deck.length; i+=nbPlayer) {
-      player3Deck.push(deck[i])
-    }
-    for (var i = 3; i < deck.length; i+=nbPlayer) {
-      player4Deck.push(deck[i])
-    }
-  }
-  deckList = [player1Deck, player2Deck, player3Deck, player4Deck]
-  deckListPlayed = [player1Played, player2Played, player3Played, player4Played]
-}
-
 function play(i){
   deckListPlayed[i].push(deckList[i][deckList[i].length-1])
   deckList[i].pop()
