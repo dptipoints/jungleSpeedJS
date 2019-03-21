@@ -54,3 +54,13 @@ function playerListCreation(nbPlayers){
   if (nbPlayers == 3) {playerList = ["player1","player2","player3"]}
   if (nbPlayers == 4) {playerList = ["player1","player2","player3","player4"]}
 }
+
+
+function visualDeckCreation() {
+  let parentDiv = document.querySelector(".playerCards")
+  for (var i = 0; i < nbPlayers; i++) {
+    let playerCardsDiv = document.createElement("div")
+    playerCardsDiv.classList.add("cards")
+    parentDiv.appendChild(playerCardsDiv)
+  }
+}
