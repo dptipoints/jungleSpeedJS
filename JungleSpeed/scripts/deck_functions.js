@@ -1,3 +1,19 @@
+function deckGen() {
+  for (color of colors) {
+    for (shape of shapes) {
+      let internalArray = []
+      internalArray.push(shape, color)
+      // internalArray.push(file) peut etre je sais pas
+      initialDeck.push(internalArray)
+    }
+  }
+  for (var i = 0; i < 3; i++) {
+    for (var x = 0; x < 4; x++) {
+      initialDeck.push("special"+i)
+    }
+  }
+  return initialDeck
+}
 function deckShuffle(deck) { // c'est du gros vol (Fisher-Yates shuffle)
   for (let i = deck.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
@@ -5,7 +21,6 @@ function deckShuffle(deck) { // c'est du gros vol (Fisher-Yates shuffle)
   }
   return deck;
 }
-
 function deckDistribution(deck, nb_players){ // on obtient une liste de longueur nb_players contenant le deck divisé entre ces joueurs (précedemment mélangé)
   let allPlayerDecks = [], cardsLeft, count
   for (var i = 0; i < nb_players; i++) {
@@ -25,26 +40,4 @@ function deckDistribution(deck, nb_players){ // on obtient une liste de longueur
     count++
   }
   return allPlayerDecks
-}
-
-function deckGen() {
-  for (color of colors) {
-    for (shape of shapes) {
-      let internalArray = []
-      internalArray.push(color, shape)
-      // internalArray.push(file) peut etre je sais pas
-      initialDeck.push(internalArray)
-    }
-  }
-  for (var i = 0; i < 3; i++) {
-    for (var x = 0; x < 4; x++) {
-      initialDeck.push("special"+i)
-    }
-  }
-}
-
-deckInit(){
-  deckGen()
-  deckShuffle(initialDeck)
-  distributedDeck = deckDistribution(initialDeck, nbPlayers)
 }
