@@ -26,3 +26,9 @@ function deckDistribution(deck, nb_players){ // on obtient une liste de longueur
   }
   return allPlayerDecks
 }
+
+
+// let carte = [color, motif, special0]
+//
+// let deck = [carte, carte, carte, .....]
+//
