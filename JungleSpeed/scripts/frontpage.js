@@ -14,8 +14,6 @@ nbPlayersButtons.forEach((e, index) => {
   e.addEventListener('click',() => {
     overlay.classList.add("displayHide")
     nbPlayers = index+2
-    deckGen()
-    deckShuffle(initialDeck)
-    distributedDeck = deckDistribution(initialDeck, nbPlayers)
+    deckInit()
   })
 })

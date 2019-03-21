@@ -42,3 +42,9 @@ function deckGen() {
     }
   }
 }
+
+deckInit(){
+  deckGen()
+  deckShuffle(initialDeck)
+  distributedDeck = deckDistribution(initialDeck, nbPlayers)
+}
