@@ -1,11 +1,10 @@
-
 let barToFill = document.querySelector('.bar_to_fill')
 let barText = document.querySelector(".bar_container p")
 let fillPercent = 0, barDecreaseVar, didItRun = false
 
 
 window.addEventListener('keyup', (e) => {
-  if (e.keyCode == "32") {
+  if (e.code == "Space") {
     if (!didItRun) {
       barDecreaseVar = setInterval(() => {
         if (fillPercent>0) {
