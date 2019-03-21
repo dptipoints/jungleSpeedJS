@@ -5,3 +5,41 @@ body{
   font-size:14px;
   color:#444;
 }
+
+.displayHide{
+  display: none;
+}
+
+.gameRow{
+  height:100vh;
+  border:1px solid red;
+}
+
+.gameLeft{
+  position: relative;
+}
+
+.overlayBeginning{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: lightblue;
+}
+
+.playercount{
+  display: flex;
+  flex-flow: row nowrap;
+  list-style-type: none;
+}
+
+.playercount li{
+  padding: 20px;
+  border:1px solid red;
+  margin:5px;
+}
+
+.chatRight{
+  background-color: #444;
+}
