@@ -26,3 +26,19 @@ function deckDistribution(deck, nb_players){ // on obtient une liste de longueur
   }
   return allPlayerDecks
 }
+
+function deckGen() {
+  for (color of colors) {
+    for (shape of shapes) {
+      let internalArray = []
+      internalArray.push(color, shape)
+      // internalArray.push(file) peut etre je sais pas
+      initialDeck.push(internalArray)
+    }
+  }
+  for (var i = 0; i < 3; i++) {
+    for (var x = 0; x < 4; x++) {
+      initialDeck.push("special"+i)
+    }
+  }
+}
