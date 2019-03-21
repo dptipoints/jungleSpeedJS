@@ -13,6 +13,8 @@ let player4Played = new Array()
 let deckList = new Array()
 let deckListPlayed = new Array()
 
+let lastPlayerPlayed
+
 let nbPlayer = parseInt(window.prompt("Combien de joueur ?", "4"))
 
 if (nbPlayer == 2) {
@@ -129,40 +131,49 @@ console.log(deckListPlayed)
 
 function play(i){
   deckListPlayed[i].push(deckList[i][deckList[i].length-1])
+  deckList[i].pop()
   // AFFICHER LA DERNIERE CARTE DE PLAYER1PLAYED
-  console.log(player1Played)
-  console.log(player1Deck)
 }
-play(1)
-console.log(deckListPlayed)
-console.log(deckList[1][deckListPlayed[1].length-1])
-console.log(deckListPlayed[1])
 
-// window.addEventListener('keydown', (e) => {
-//       if(e.code == "KeyQ" ){
-//         play(1)
-//         console.log(player1Played)
-//       }
-//     }
-//   )
-// window.addEventListener('keydown', (e) => {
-//       if(e.code == "KeyZ" ){
-//         play(2)
-//         console.log(player2Played)
-//       }
-//     }
-//   )
-// window.addEventListener('keydown', (e) => {
-//       if(e.code == "KeyE" ){
-//         play(3)
-//         console.log(player3Played)
-//       }
-//     }
-//   )
-// window.addEventListener('keydown', (e) => {
-//       if(e.code == "KeyR" ){
-//         play(4)
-//         console.log(player4Played)
-//       }
-//     }
-//   )
+
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyQ" ){
+        play(0)
+        lastPlayerPlayed = player1
+        console.log(deckList)
+        console.log(deckListPlayed)
+
+      }
+    }
+  )
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyW" ){
+        play(1)
+        lastPlayerPlayed = player2
+        console.log(deckList)
+        console.log(deckListPlayed)
+      }
+    }
+  )
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyE" ){
+        play(2)
+        lastPlayerPlayed = player3
+        console.log(deckList)
+        console.log(deckListPlayed)
+      }
+    }
+  )
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyR" ){
+        play(3)
+        lastPlayerPlayed = player4
+        console.log(deckList)
+        console.log(deckListPlayed)
+      }
+    }
+  )
+
+
+
+  lastPlayerPlayed ==
