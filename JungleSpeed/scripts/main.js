@@ -4,7 +4,7 @@ let player2Deck = new Array()
 let player3Deck = new Array()
 let player4Deck = new Array()
 
-let nbPlayer = parseInt(window.prompt("Combien de joueur ?", "4"))
+// let nbPlayer = parseInt(window.prompt("Combien de joueur ?", "4"))
 
 
 function deckShuffle(deck) { // c'est du gros vol (Fisher-Yates shuffle)
@@ -54,8 +54,6 @@ function distribute(nbPlayer){
   }
 }
 
-console.log(deck)
-deckShuffle(deck)
-console.log(deck)
-distribute(nbPlayer)
-console.log(player1Deck,player2Deck,player3Deck,player4Deck)
+// deckShuffle(deck)
+// distribute(nbPlayer)
+// console.log(player1Deck,player2Deck,player3Deck,player4Deck)
