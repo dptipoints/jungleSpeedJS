@@ -12,23 +12,17 @@ function deckDistribution(deck, nb_players){ // on obtient une liste de longueur
     let playerDeck = []
     let cardsLeft = deck.length - (parseInt(deck.length/nb_players))*nb_players
     // eg : pour un deck de 80 cartes avec 3 joueurs
-    // 80 - (26*3)
+    // 80 - (26*3) = 2
     for (var x = i*parseInt((deck.length/nb_players)); x < ((i+1)*parseInt((deck.length/nb_players))); x++) {
       playerDeck.push(deck[x])
     }
     allPlayerDecks.push(playerDeck)
   }
   count = 0
+  // gestion des cartes restantes
   for (var i = deck.length; i > deck.length-cardsLeft; i--) {
-    console.log(deck[i-1])
     allPlayerDecks[count].push(deck[i-1])
     count++
   }
   return allPlayerDecks
 }
-
-
-// let carte = [color, motif, special0]
-//
-// let deck = [carte, carte, carte, .....]
-//
