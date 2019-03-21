@@ -4,7 +4,7 @@ let player2Deck = new Array()
 let player3Deck = new Array()
 let player4Deck = new Array()
 
-let nbplayer = parseInt(window.prompt("Combien de joueur ?", "4"))
+let nbPlayer = parseInt(window.prompt("Combien de joueur ?", "4"))
 
 
 function deckShuffle(deck) { // c'est du gros vol (Fisher-Yates shuffle)
@@ -19,43 +19,43 @@ function distribute(nbPlayer){
 
   if (nbPlayer == 2) {
     for (var i = 0; i < deck.length; i+=nbPlayer) {
-      player1.push(deck[i])
+      player1Deck.push(deck[i])
     }
     for (var i = 1; i < deck.length; i+=nbPlayer) {
-      player2.push(deck[i])
+      player2Deck.push(deck[i])
     }
   }
 
   if (nbPlayer == 3) {
     for (var i = 0; i < deck.length; i+=nbPlayer) {
-      player1.push(deck[i])
+      player1Deck.push(deck[i])
     }
     for (var i = 1; i < deck.length; i+=nbPlayer) {
-      player2.push(deck[i])
+      player2Deck.push(deck[i])
     }
     for (var i = 2; i < deck.length; i+=nbPlayer) {
-      player3.push(deck[i])
+      player3Deck.push(deck[i])
     }
   }
 
   if (nbPlayer == 4) {
     for (var i = 0; i < deck.length; i+=nbPlayer) {
-      player1.push(deck[i])
+      player1Deck.push(deck[i])
     }
     for (var i = 1; i < deck.length; i+=nbPlayer) {
-      player2.push(deck[i])
+      player2Deck.push(deck[i])
     }
     for (var i = 2; i < deck.length; i+=nbPlayer) {
-      player3.push(deck[i])
+      player3Deck.push(deck[i])
     }
     for (var i = 3; i < deck.length; i+=nbPlayer) {
-      player4.push(deck[i])
+      player4Deck.push(deck[i])
     }
   }
 }
 
 console.log(deck)
-deckShuffle()
+deckShuffle(deck)
 console.log(deck)
-distribute()
+distribute(nbPlayer)
 console.log(player1Deck,player2Deck,player3Deck,player4Deck)
