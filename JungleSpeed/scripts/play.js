@@ -129,7 +129,6 @@ console.log(deckListPlayed)
 
 function play(i){
   deckListPlayed[i].push(deckList[i][deckList[i].length-1])
-  deckList[i].pop()
   // AFFICHER LA DERNIERE CARTE DE PLAYER1PLAYED
   console.log(player1Played)
   console.log(player1Deck)

@@ -4,7 +4,27 @@ let player2Deck = new Array()
 let player3Deck = new Array()
 let player4Deck = new Array()
 
-// let nbPlayer = parseInt(window.prompt("Combien de joueur ?", "4"))
+let player1Played = new Array()
+let player2Played = new Array()
+let player3Played = new Array()
+let player4Played = new Array()
+
+let deckList = new Array()
+let deckListPlayed = new Array()
+
+let nbPlayer = parseInt(window.prompt("Combien de joueur ?", "4"))
+
+if (nbPlayer == 2) {
+  playerList = ["player1","player2"]
+}
+if (nbPlayer == 3) {
+  playerList = ["player1","player2","player3"]
+}
+if (nbPlayer == 4) {
+  playerList = ["player1","player2","player3","player4"]
+}
+
+console.log(playerList)
 
 
 function deckShuffle(deck) { // c'est du gros vol (Fisher-Yates shuffle)
@@ -54,6 +74,11 @@ function distribute(nbPlayer){
   }
 }
 
-// deckShuffle(deck)
-// distribute(nbPlayer)
-// console.log(player1Deck,player2Deck,player3Deck,player4Deck)
+function play(i){
+  deckListPlayed[i].push(deckList[i][deckList[i].length-1])
+  deckList[i].pop()
+  // AFFICHER LA DERNIERE CARTE DE PLAYER1PLAYED
+}
+
+deckList = [player1Deck, player2Deck, player3Deck, player4Deck]
+deckListPlayed = [player1Played, player2Played, player3Played, player4Played]
