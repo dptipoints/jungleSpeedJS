@@ -13,7 +13,8 @@ let player4Played = new Array()
 let deckList = new Array()
 let deckListPlayed = new Array()
 
-let lastPlayerPlayed
+let lastPlayerPlayed = "undefined"
+let playDelay = true
 
 let nbPlayer = parseInt(window.prompt("Combien de joueur ?", "4"))
 
@@ -130,50 +131,100 @@ console.log(deckList)
 console.log(deckListPlayed)
 
 function play(i){
+  playDelay = false
+  console.log(playDelay)
   deckListPlayed[i].push(deckList[i][deckList[i].length-1])
   deckList[i].pop()
   // AFFICHER LA DERNIERE CARTE DE PLAYER1PLAYED
+  setTimeout(function(){
+    playDelay = true
+    console.log(playDelay)
+  }
+  ,2000)
 }
 
+// PLAY PLAYER 1
 
 window.addEventListener('keydown', (e) => {
-      if(e.code == "KeyQ" ){
-        play(0)
-        lastPlayerPlayed = player1
-        console.log(deckList)
-        console.log(deckListPlayed)
-
-      }
-    }
-  )
-window.addEventListener('keydown', (e) => {
-      if(e.code == "KeyW" ){
-        play(1)
-        lastPlayerPlayed = player2
-        console.log(deckList)
-        console.log(deckListPlayed)
-      }
-    }
-  )
-window.addEventListener('keydown', (e) => {
-      if(e.code == "KeyE" ){
-        play(2)
-        lastPlayerPlayed = player3
-        console.log(deckList)
-        console.log(deckListPlayed)
-      }
-    }
-  )
-window.addEventListener('keydown', (e) => {
-      if(e.code == "KeyR" ){
-        play(3)
-        lastPlayerPlayed = player4
-        console.log(deckList)
-        console.log(deckListPlayed)
+      if(e.code == "KeyQ" && playDelay == true){
+        if(nbPlayer == 2){
+          if (lastPlayerPlayed == "player2" || lastPlayerPlayed == "undefined") {
+            play(0)
+            lastPlayerPlayed = "player1"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+        if (nbPlayer == 3) {
+          if (lastPlayerPlayed == "player3" || lastPlayerPlayed == "undefined") {
+            play(0)
+            lastPlayerPlayed = "player1"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+        if (nbPlayer == 4) {
+          if (lastPlayerPlayed == "player4" || lastPlayerPlayed == "undefined") {
+            play(0)
+            lastPlayerPlayed = "player1"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
       }
     }
   )
 
+// PLAY PLAYER 2
 
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyW" && playDelay == true){
+        if (lastPlayerPlayed == "player1") {
+          play(1)
+          lastPlayerPlayed = "player2"
+          console.log(deckList)
+          console.log(deckListPlayed)
+        }
+      }
+    }
+  )
 
-  lastPlayerPlayed ==
+// PLAY PLAYER 3
+
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyE" && playDelay == true){
+        if (nbPlayer == 3) {
+          if (lastPlayerPlayed == "player2") {
+            play(2)
+            lastPlayerPlayed = "player3"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+        if (nbPlayer == 4) {
+          if (lastPlayerPlayed == "player2") {
+            play(2)
+            lastPlayerPlayed = "player3"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+      }
+    }
+  )
+
+// PLAY PLAYER 4
+
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyR" && playDelay == true){
+        if (nbPlayer == 4) {
+          if (lastPlayerPlayed == "player3") {
+            play(3)
+            lastPlayerPlayed = "player4"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+      }
+    }
+  )

@@ -16,7 +16,6 @@ nbPlayersButtons.forEach((e, index) => {
     playerListCreation(nbPlayers)
     deckGen()
     deckShuffle(deck)
-    deck = deckDistribution(deck, nbPlayers)
     // FONCTION DISTRIBUTE DE EYTHAN
   })
 })
