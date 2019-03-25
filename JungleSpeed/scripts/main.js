@@ -12,6 +12,19 @@ for (var i = 0; i < 18; i++) { // temporaire, le temps de nommer les formes
 let lastPlayerPlayed = "undefined"
 let playDelay = true
 
+let player1Deck = new Array()
+let player2Deck = new Array()
+let player3Deck = new Array()
+let player4Deck = new Array()
+
+let player1Played = new Array()
+let player2Played = new Array()
+let player3Played = new Array()
+let player4Played = new Array()
+
+let deckList = [player1Deck, player2Deck, player3Deck, player4Deck]
+let deckListPlayed = [player1Played, player2Played, player3Played, player4Played]
+
 nbPlayersButtons.forEach((e, index) => {
   e.addEventListener('click',() => {
     overlay.classList.add("displayHide")
@@ -28,7 +41,7 @@ nbPlayersButtons.forEach((e, index) => {
 
 window.addEventListener('keydown', (e) => {
       if(e.code == "KeyQ" && playDelay == true){
-        if(nbPlayer == 2){
+        if(nbPlayers == 2){
           if (lastPlayerPlayed == "player2" || lastPlayerPlayed == "undefined") {
             play(0)
             lastPlayerPlayed = "player1"
@@ -36,7 +49,7 @@ window.addEventListener('keydown', (e) => {
             console.log(deckListPlayed)
           }
         }
-        if (nbPlayer == 3) {
+        if (nbPlayers == 3) {
           if (lastPlayerPlayed == "player3" || lastPlayerPlayed == "undefined") {
             play(0)
             lastPlayerPlayed = "player1"
@@ -44,7 +57,7 @@ window.addEventListener('keydown', (e) => {
             console.log(deckListPlayed)
           }
         }
-        if (nbPlayer == 4) {
+        if (nbPlayers == 4) {
           if (lastPlayerPlayed == "player4" || lastPlayerPlayed == "undefined") {
             play(0)
             lastPlayerPlayed = "player1"
@@ -74,7 +87,7 @@ window.addEventListener('keydown', (e) => {
 
 window.addEventListener('keydown', (e) => {
       if(e.code == "KeyE" && playDelay == true){
-        if (nbPlayer == 3) {
+        if (nbPlayers == 3) {
           if (lastPlayerPlayed == "player2") {
             play(2)
             lastPlayerPlayed = "player3"
@@ -82,7 +95,7 @@ window.addEventListener('keydown', (e) => {
             console.log(deckListPlayed)
           }
         }
-        if (nbPlayer == 4) {
+        if (nbPlayers == 4) {
           if (lastPlayerPlayed == "player2") {
             play(2)
             lastPlayerPlayed = "player3"
@@ -98,7 +111,7 @@ window.addEventListener('keydown', (e) => {
 
 window.addEventListener('keydown', (e) => {
       if(e.code == "KeyR" && playDelay == true){
-        if (nbPlayer == 4) {
+        if (nbPlayers == 4) {
           if (lastPlayerPlayed == "player3") {
             play(3)
             lastPlayerPlayed = "player4"

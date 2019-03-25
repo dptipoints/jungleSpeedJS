@@ -43,9 +43,16 @@ function deckDistribution(deck, nb_players){ // on obtient une liste de longueur
 }
 
 function play(i){
+  playDelay = false
+  console.log(playDelay)
   deckListPlayed[i].push(deckList[i][deckList[i].length-1])
   deckList[i].pop()
   // AFFICHER LA DERNIERE CARTE DE PLAYER1PLAYED
+  setTimeout(function(){
+    playDelay = true
+    console.log(playDelay)
+  }
+  ,2000)
 }
 
 
