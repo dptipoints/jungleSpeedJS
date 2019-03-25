@@ -9,6 +9,9 @@ for (var i = 0; i < 18; i++) { // temporaire, le temps de nommer les formes
   shapes.push("shape"+(i+1))
 }
 
+let lastPlayerPlayed = "undefined"
+let playDelay = true
+
 nbPlayersButtons.forEach((e, index) => {
   e.addEventListener('click',() => {
     overlay.classList.add("displayHide")
@@ -20,3 +23,89 @@ nbPlayersButtons.forEach((e, index) => {
     visualDeckCreation()
   })
 })
+
+// PLAY PLAYER 1
+
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyQ" && playDelay == true){
+        if(nbPlayer == 2){
+          if (lastPlayerPlayed == "player2" || lastPlayerPlayed == "undefined") {
+            play(0)
+            lastPlayerPlayed = "player1"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+        if (nbPlayer == 3) {
+          if (lastPlayerPlayed == "player3" || lastPlayerPlayed == "undefined") {
+            play(0)
+            lastPlayerPlayed = "player1"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+        if (nbPlayer == 4) {
+          if (lastPlayerPlayed == "player4" || lastPlayerPlayed == "undefined") {
+            play(0)
+            lastPlayerPlayed = "player1"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+      }
+    }
+  )
+
+// PLAY PLAYER 2
+
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyW" && playDelay == true){
+        if (lastPlayerPlayed == "player1") {
+          play(1)
+          lastPlayerPlayed = "player2"
+          console.log(deckList)
+          console.log(deckListPlayed)
+        }
+      }
+    }
+  )
+
+// PLAY PLAYER 3
+
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyE" && playDelay == true){
+        if (nbPlayer == 3) {
+          if (lastPlayerPlayed == "player2") {
+            play(2)
+            lastPlayerPlayed = "player3"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+        if (nbPlayer == 4) {
+          if (lastPlayerPlayed == "player2") {
+            play(2)
+            lastPlayerPlayed = "player3"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+      }
+    }
+  )
+
+// PLAY PLAYER 4
+
+window.addEventListener('keydown', (e) => {
+      if(e.code == "KeyR" && playDelay == true){
+        if (nbPlayer == 4) {
+          if (lastPlayerPlayed == "player3") {
+            play(3)
+            lastPlayerPlayed = "player4"
+            console.log(deckList)
+            console.log(deckListPlayed)
+          }
+        }
+      }
+    }
+  )
