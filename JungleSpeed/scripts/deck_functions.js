@@ -53,8 +53,6 @@ function play(i){
     console.log(playDelay)
   }
   ,2000)
-  console.log(deckPlayed)
-  console.log(deck)
 }
 
 
@@ -75,9 +73,18 @@ function visualDeckCreation() {
 }
 
 function keyBindsSetup() {
+  let count = 1
   if (overlay.classList.contains("displayHide") && !overlay2.classList.contains("displayHide")) {
-    window.one("keydown", e => {
-
+    console.log("ma bite en fait")
+    window.addEventListener("keydown", e => {
+      if (count<=nbPlayers && !keyBinds.includes(e.key)) {
+        keyBinds.push(e.key)
+        count++
+        $(".overlay2text").text("ENTREZ LA TOUCHE POUR LE JOUEUR "+count)
+      }
+      if (count > nbPlayers) {
+        overlay2.classList.add("displayHide")
+      }
     })
   }
 }

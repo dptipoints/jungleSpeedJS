@@ -1,7 +1,7 @@
 let nbPlayersButtons = document.querySelectorAll(".playercount li")
 let overlay = document.querySelector(".overlayBeginning")
 let overlay2 = document.querySelector(".overlay2")
-let nbPlayers, deck = [], deckPlayed = [[], [], [], []]
+let nbPlayers, deck = [], deckPlayed = [[], [], [], []], keyBinds = [], keyBindsDone
 
 // 18*4 (72) cartes normales + 12 cartes spéciales
 let colors = ["yellow", "green", "blue", "red"]
@@ -10,19 +10,6 @@ let special = ["specialColor", "specialTogether", "specialGrab"]
 
 let lastPlayerPlayed = "undefined"
 let playDelay = true
-
-let player1Deck = new Array()
-let player2Deck = new Array()
-let player3Deck = new Array()
-let player4Deck = new Array()
-
-let player1Played = new Array()
-let player2Played = new Array()
-let player3Played = new Array()
-let player4Played = new Array()
-
-let deckList = [player1Deck, player2Deck, player3Deck, player4Deck]
-let deckListPlayed = [player1Played, player2Played, player3Played, player4Played]
 
 nbPlayersButtons.forEach((e, index) => {
   e.addEventListener('click',() => {
@@ -33,8 +20,13 @@ nbPlayersButtons.forEach((e, index) => {
     deckShuffle(deck)
     deck = deckDistribution(deck, nbPlayers)
     visualDeckCreation()
+    keyBindsSetup()
   })
 })
+
+
+
+// TODO: REFACTOR QUAND LES JOUEURS JOUENT ET UTILISER LES KEYBINDS DE LA LISTE KEYBINDS
 
 // PLAY PLAYER 1
 
@@ -59,8 +51,7 @@ window.addEventListener('keydown', (e) => {
           }
         }
       }
-    }
-  )
+    })
 
 // PLAY PLAYER 2
 
@@ -71,8 +62,7 @@ window.addEventListener('keydown', (e) => {
           lastPlayerPlayed = "player2"
         }
       }
-    }
-  )
+    })
 
 // PLAY PLAYER 3
 
@@ -91,8 +81,7 @@ window.addEventListener('keydown', (e) => {
           }
         }
       }
-    }
-  )
+    })
 
 // PLAY PLAYER 4
 
@@ -105,5 +94,4 @@ window.addEventListener('keydown', (e) => {
           }
         }
       }
-    }
-  )
+    })
