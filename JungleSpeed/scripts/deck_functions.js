@@ -7,9 +7,9 @@ function deckGen() {
       deck.push(internalArray)
     }
   }
-  for (var i = 0; i < 3; i++) {
-    for (var x = 0; x < 4; x++) {
-      deck.push("special"+i)
+  for (var i = 0; i < 4; i++) {
+    for (var x = 0; x < 3; x++) {
+      deck.push(special[x])
     }
   }
   return deck
@@ -45,14 +45,16 @@ function deckDistribution(deck, nb_players){ // on obtient une liste de longueur
 function play(i){
   playDelay = false
   console.log(playDelay)
-  deckListPlayed[i].push(deckList[i][deckList[i].length-1])
-  deckList[i].pop()
+  deckPlayed[i].push(deck[i][deck[i].length-1])
+  deck[i].pop()
   // AFFICHER LA DERNIERE CARTE DE PLAYER1PLAYED
   setTimeout(function(){
     playDelay = true
     console.log(playDelay)
   }
   ,2000)
+  console.log(deckPlayed)
+  console.log(deck)
 }
 
 
@@ -74,6 +76,8 @@ function visualDeckCreation() {
 
 function keyBindsSetup() {
   if (overlay.classList.contains("displayHide") && !overlay2.classList.contains("displayHide")) {
-    
+    window.one("keydown", e => {
+
+    })
   }
 }

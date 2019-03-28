@@ -1,14 +1,12 @@
 let nbPlayersButtons = document.querySelectorAll(".playercount li")
 let overlay = document.querySelector(".overlayBeginning")
 let overlay2 = document.querySelector(".overlay2")
-let nbPlayers, deck = []
+let nbPlayers, deck = [], deckPlayed = [[], [], [], []]
 
 // 18*4 (72) cartes normales + 12 cartes spéciales
 let colors = ["yellow", "green", "blue", "red"]
-let shapes = ["circleCross","circleCrossCut","circleCrossIn","circleCrossOut","circlesSquare","emptyCircle","fullCircle","octogonsCircle","octogonsSquare","squaresCircle","star","starBig","starSpike","starSquare","string","stringClose","stringLong","stringShort","special"]
-for (var i = 0; i < 18; i++) { // temporaire, le temps de nommer les formes
-  shapes.push("shape"+(i+1))
-}
+let shapes = ["circleCross","circleCrossCut","circleCrossIn","circleCrossOut","circlesSquare","emptyCircle","fullCircle","octogonsCircle","octogonsSquare","squaresCircle","star","starBig","starSpike","starSquare","string","stringClose","stringLong","stringShort"]
+let special = ["specialColor", "specialTogether", "specialGrab"]
 
 let lastPlayerPlayed = "undefined"
 let playDelay = true
@@ -46,24 +44,18 @@ window.addEventListener('keydown', (e) => {
           if (lastPlayerPlayed == "player2" || lastPlayerPlayed == "undefined") {
             play(0)
             lastPlayerPlayed = "player1"
-            console.log(deckList)
-            console.log(deckListPlayed)
           }
         }
         if (nbPlayers == 3) {
           if (lastPlayerPlayed == "player3" || lastPlayerPlayed == "undefined") {
             play(0)
             lastPlayerPlayed = "player1"
-            console.log(deckList)
-            console.log(deckListPlayed)
           }
         }
         if (nbPlayers == 4) {
           if (lastPlayerPlayed == "player4" || lastPlayerPlayed == "undefined") {
             play(0)
             lastPlayerPlayed = "player1"
-            console.log(deckList)
-            console.log(deckListPlayed)
           }
         }
       }
@@ -77,8 +69,6 @@ window.addEventListener('keydown', (e) => {
         if (lastPlayerPlayed == "player1") {
           play(1)
           lastPlayerPlayed = "player2"
-          console.log(deckList)
-          console.log(deckListPlayed)
         }
       }
     }
@@ -92,16 +82,12 @@ window.addEventListener('keydown', (e) => {
           if (lastPlayerPlayed == "player2") {
             play(2)
             lastPlayerPlayed = "player3"
-            console.log(deckList)
-            console.log(deckListPlayed)
           }
         }
         if (nbPlayers == 4) {
           if (lastPlayerPlayed == "player2") {
             play(2)
             lastPlayerPlayed = "player3"
-            console.log(deckList)
-            console.log(deckListPlayed)
           }
         }
       }
@@ -116,8 +102,6 @@ window.addEventListener('keydown', (e) => {
           if (lastPlayerPlayed == "player3") {
             play(3)
             lastPlayerPlayed = "player4"
-            console.log(deckList)
-            console.log(deckListPlayed)
           }
         }
       }
