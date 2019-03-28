@@ -44,24 +44,13 @@ function deckDistribution(deck, nb_players){ // on obtient une liste de longueur
 
 function play(i){
   playDelay = false
-  console.log(playDelay)
   deckPlayed[i].push(deck[i][deck[i].length-1])
   deck[i].pop()
   // AFFICHER LA DERNIERE CARTE DE PLAYER1PLAYED
   setTimeout(function(){
     playDelay = true
-    console.log(playDelay)
-  }
-  ,2000)
+  },2000)
 }
-
-
-function playerListCreation(nbPlayers){
-  if (nbPlayers == 2) {playerList = ["player1","player2"]}
-  if (nbPlayers == 3) {playerList = ["player1","player2","player3"]}
-  if (nbPlayers == 4) {playerList = ["player1","player2","player3","player4"]}
-}
-
 
 function visualDeckCreation() {
   let parentDiv = document.querySelector(".playerCards")
@@ -75,11 +64,9 @@ function visualDeckCreation() {
 function keyBindsSetup() {
   let count = 1
   if (overlay.classList.contains("displayHide") && !overlay2.classList.contains("displayHide")) {
-    console.log("ma bite en fait")
     window.addEventListener("keydown", e => {
       if (count<=nbPlayers && !keyBinds.includes(e.key)) {
-        keyBinds.push(e.key)
-        count++
+        keyBinds.push(e.key), count++
         $(".overlay2text").text("ENTREZ LA TOUCHE POUR LE JOUEUR "+count)
       }
       if (count > nbPlayers) {

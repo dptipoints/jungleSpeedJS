@@ -1,7 +1,7 @@
 let nbPlayersButtons = document.querySelectorAll(".playercount li")
 let overlay = document.querySelector(".overlayBeginning")
 let overlay2 = document.querySelector(".overlay2")
-let nbPlayers, deck = [], deckPlayed = [[], [], [], []], keyBinds = [], keyBindsDone
+let nbPlayers, deck = [], deckPlayed = [[], [], [], []], keyBinds = []
 
 // 18*4 (72) cartes normales + 12 cartes spéciales
 let colors = ["yellow", "green", "blue", "red"]
@@ -15,7 +15,6 @@ nbPlayersButtons.forEach((e, index) => {
   e.addEventListener('click',() => {
     overlay.classList.add("displayHide")
     nbPlayers = index+2
-    playerListCreation(nbPlayers)
     deckGen()
     deckShuffle(deck)
     deck = deckDistribution(deck, nbPlayers)
