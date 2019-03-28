@@ -1,5 +1,6 @@
 let nbPlayersButtons = document.querySelectorAll(".playercount li")
 let overlay = document.querySelector(".overlayBeginning")
+let overlay2 = document.querySelector(".overlay2")
 let nbPlayers, deck = []
 
 // 18*4 (72) cartes normales + 12 cartes spéciales

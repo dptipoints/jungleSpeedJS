@@ -71,3 +71,9 @@ function visualDeckCreation() {
     parentDiv.appendChild(playerCardsDiv)
   }
 }
+
+function keyBindsSetup() {
+  if (overlay.classList.contains("displayHide") && !overlay2.classList.contains("displayHide")) {
+    
+  }
+}
