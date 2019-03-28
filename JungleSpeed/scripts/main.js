@@ -5,7 +5,7 @@ let nbPlayers, deck = []
 
 // 18*4 (72) cartes normales + 12 cartes spéciales
 let colors = ["yellow", "green", "blue", "red"]
-let shapes = [] // TODO: a nommer
+let shapes = ["circleCross","circleCrossCut","circleCrossIn","circleCrossOut","circlesSquare","emptyCircle","fullCircle","octogonsCircle","octogonsSquare","squaresCircle","star","starBig","starSpike","starSquare","string","stringClose","stringLong","stringShort","special"]
 for (var i = 0; i < 18; i++) { // temporaire, le temps de nommer les formes
   shapes.push("shape"+(i+1))
 }
