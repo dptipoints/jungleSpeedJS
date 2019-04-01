@@ -4,7 +4,7 @@ let overlay2 = document.querySelector(".overlay2")
 let nbPlayers, deck = [], deckPlayed = [[], [], [], []], keyBinds = []
 
 // 18*4 (72) cartes normales + 12 cartes spéciales
-let colors = ["yellow", "green", "blue", "red"]
+let colors = ["Yellow", "Green", "Blue", "Red"]
 let shapes = ["circleCross","circleCrossCut","circleCrossIn","circleCrossOut","circlesSquare","emptyCircle","fullCircle","octogonsCircle","octogonsSquare","squaresCircle","star","starBig","starSpike","starSquare","string","stringClose","stringLong","stringShort"]
 let special = ["specialColor", "specialTogether", "specialGrab"]
 
@@ -30,7 +30,7 @@ nbPlayersButtons.forEach((e, index) => {
 // PLAY PLAYER 1
 
 window.addEventListener('keydown', (e) => {
-      if(e.code == "KeyQ" && playDelay == true){
+      if(e.key = keyBinds[0] && playDelay == true){
         if(nbPlayers == 2){
           if (lastPlayerPlayed == "player2" || lastPlayerPlayed == "undefined") {
             play(0)
@@ -55,7 +55,7 @@ window.addEventListener('keydown', (e) => {
 // PLAY PLAYER 2
 
 window.addEventListener('keydown', (e) => {
-      if(e.code == "KeyW" && playDelay == true){
+      if(e.key = keyBinds[1] && playDelay == true){
         if (lastPlayerPlayed == "player1") {
           play(1)
           lastPlayerPlayed = "player2"
@@ -66,7 +66,7 @@ window.addEventListener('keydown', (e) => {
 // PLAY PLAYER 3
 
 window.addEventListener('keydown', (e) => {
-      if(e.code == "KeyE" && playDelay == true){
+      if(e.key = keyBinds[2] && playDelay == true){
         if (nbPlayers == 3) {
           if (lastPlayerPlayed == "player2") {
             play(2)
@@ -85,8 +85,8 @@ window.addEventListener('keydown', (e) => {
 // PLAY PLAYER 4
 
 window.addEventListener('keydown', (e) => {
-      if(e.code == "KeyR" && playDelay == true){
-        if (nbPlayers == 4) {
+      if(nbPlayers == 4){
+        if (e.key = keyBinds[3] && playDelay == true) {
           if (lastPlayerPlayed == "player3") {
             play(3)
             lastPlayerPlayed = "player4"
