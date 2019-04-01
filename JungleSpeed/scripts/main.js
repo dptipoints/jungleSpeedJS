@@ -18,7 +18,7 @@ nbPlayersButtons.forEach((e, index) => {
     deckGen()
     deckShuffle(deck)
     deck = deckDistribution(deck, nbPlayers)
-    visualDeckCreation()
+    // visualDeckCreation()
     keyBindsSetup()
   })
 })

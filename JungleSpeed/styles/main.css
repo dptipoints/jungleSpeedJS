@@ -4,6 +4,8 @@ body{
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size:14px;
   color:#444;
+  background-image: url("../images/sand.jpg");
+  background-size: cover;
 }
 
 *{
