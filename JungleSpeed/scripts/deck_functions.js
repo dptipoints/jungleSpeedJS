@@ -3,6 +3,7 @@ function deckGen() {
     for (shape of shapes) {
       let internalArray = []
       internalArray.push(shape, color)
+      internalArray.push("Cards/"+shape+"/"+shape+color+".png")
       // internalArray.push(file) peut etre je sais pas
       deck.push(internalArray)
     }
@@ -14,6 +15,7 @@ function deckGen() {
   }
   return deck
 }
+
 function deckShuffle(deck) { // c'est du gros vol (Fisher-Yates shuffle)
   for (let i = deck.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
@@ -50,6 +52,9 @@ function play(i){
   setTimeout(function(){
     playDelay = true
   },2000)
+  // $(".playerCards:nth-child(i+1)").backroundImage = deck[i][deck[i].length-1][2]
+  // on recupère le nom du fichier de la carte à appliquer
+  // marche pas pour l'instant
 }
 
 function visualDeckCreation() {
